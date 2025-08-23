@@ -1,0 +1,42 @@
+.App {
+    font-family: sans-serif;
+    font-size:10px;
+  }
+  .lan ol{
+    list-style:none;
+    display:flex;
+    font-size:18px;
+  
+  }
+  .lan ol li {
+    text-decoration:none;
+    padding-left:20px;
+  }
+  .editor-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  li a{
+    color: gray;
+    text-decoration: none;
+    padding: 0px 10px; /* ⬅ more vertical and horizontal space */
+    display: inline-block; /* ensures padding applies properly */
+    transition: color 0.5s ease, text-decoration-color 0.5s ease;
+    text-decoration-color: transparent; 
+    font-size:14px;
+  }
+  
+  a.active {
+    color: blue;
+    text-decoration: underline;
+    text-decoration-thickness: 2px; 
+  
+    text-underline-offset: 14px;
+   
+  }
+  element.style{
+    background-color:white;
+  }
+  
