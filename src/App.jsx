@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LOGIN from "./components/login";
 import Navbar from "./components/Navbar";
 import EditorLayout from "./components/EditorLayout";
-
+import SignUp from "./components/signUp";
 function App() {
     const [html, setHtml] = useState("");
     const [css, setCss] = useState("");
@@ -43,7 +43,7 @@ function App() {
                 <Routes  style={{ backgroundColor: "rgb(245, 245, 245)" }}>
                     {/* Login Page → Separate Screen */}
                     <Route path="/login" element={<LOGIN />} />
-
+                    <Route path="/signup" element={<SignUp/>}></Route>
                     {/* Editor Layout → Shared for /, /css, /js */}
                     <Route element={<EditorLayout handleRun={handleRun} srcDoc={srcDoc} />}>
                         <Route path="/" element={<Editor language="html" value={html} onChange={setHtml} />} />
