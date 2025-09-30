@@ -1,35 +1,17 @@
 import React, { useState } from "react";
 import { Container, Card, Form, Button } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
-import { signInWithEmailAndPassword } from ".../";
-import { auth } from "../fire_base/fireBase"; // make sure firebase.js is configured
-
-const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    try {
-      await signInWithEmailAndPassword(auth, email, password);
-      alert("✅ Login Successful!");
-    } catch (err) {
-      setError(err.message);
-    }
-  };
+const Login =()=>{
 
   return (
     <Container className="d-flex justify-content-center bg-white p-4">
       <Card style={{ width: "18rem" }} className="p-2">
-        <Form className="m-2" onSubmit={handleLogin}>
+        <Form className="m-2">
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
             <Form.Control 
               type="email" 
               placeholder="Enter email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)} 
               required
             />
             <Form.Text className="text-muted">
@@ -37,18 +19,16 @@ const Login = () => {
             </Form.Text>
           </Form.Group>
 
-          <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Group className="mb-3" controlId="formBasicPassword" >
             <Form.Label>Password</Form.Label>
             <Form.Control 
               type="password" 
               placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)} 
               required
             />
           </Form.Group>
 
-          {error && <p className="text-danger">{error}</p>}
+          {/* {error && <p className="text-danger">{error}</p>} */}
 
           <span>New account create </span>
           <NavLink to="/signup">
@@ -64,6 +44,6 @@ const Login = () => {
       </Card>
     </Container>
   );
-};
+}
 
 export default Login;
