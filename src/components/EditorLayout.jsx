@@ -27,7 +27,7 @@ function EditorLayout({ handleRun, srcDoc }) {
 
             {/* Editor + Preview */}
             <div className="d-flex">
-                <Outlet /> {/* <-- Editor will render here */}
+                <Outlet /> 
                 <Preview srcDoc={srcDoc} />
             </div>
         </div>
