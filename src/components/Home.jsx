@@ -13,19 +13,19 @@ const Home = () => {
     const [srcDoc, setSrcDoc] = useState("");
     useEffect(() => {
         const storehtml = localStorage.getItem("html");
-        if (storehtml == "") {
+        if (!storehtml) {
             setHtml(`<!DOCTYPE html>
-<html>
-  <head>
-    <title>Hello, World!</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-      <h1 class="title">Hello World! </h1>
-      <p id="currentTime"></p>
-      <script src="script.js"></script>
-  </body>
-</html>`);
+            <html>
+            <head>
+                <title>Hello, World!</title>
+                <link rel="stylesheet" href="styles.css" />
+            </head>
+            <body>
+                <h1 class="title">Hello World! </h1>
+                <p id="currentTime"></p>
+                <script src="script.js"></script>
+            </body>
+            </html>`);
         }
         else{
             setHtml(localStorage.getItem("html"));
@@ -33,7 +33,7 @@ const Home = () => {
         
     }, []);
     useEffect(()=>{
-        if(localStorage.getItem("css") == ""){
+        if(!localStorage.getItem("css")){
             setCss(`body{padding:25px;} .title{color:#5C6AC4;}`);
         }
         else{
@@ -41,7 +41,7 @@ const Home = () => {
         }
     },[])
     useEffect(() => {
-        if(localStorage.getItem("js")==""){
+        if(!localStorage.getItem("js")){
             setJs(
                 `function showTime(){document.getElementById('currentTime').innerHTML=new Date().toUTCString();} showTime(); setInterval(showTime,1000);`
             );
