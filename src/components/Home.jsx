@@ -5,7 +5,7 @@ import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import LOGIN from "./login";
 import Navbar from "./Navbar";
 import EditorLayout from "./EditorLayout";
-import SignUp from "./signUp";
+import SignUp from "./SignUp";
 const Home = () => {
     const [html, setHtml] = useState("");
     const [css, setCss] = useState("");
